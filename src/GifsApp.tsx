@@ -1,9 +1,18 @@
 import { sampleGifs } from "./sample-data/gifs.sample";
+
 import { AppHeader } from "./shared/components/AppHeader";
 import { PreviousSearches } from "./shared/components/PreviousSearches";
 import { SearchBar } from "./shared/components/SearchBar";
 
+import { GifList } from "./gifs/components/GifList";
+
 export const GifsApp = function () {
+  // const [previousSearches, setPreviousSearches] = useState([["Libros"]]);
+
+  const handleTermClicked = (term: string) => {
+    console.log({ term });
+  };
+
   return (
     <>
       {/* Header */}
@@ -17,22 +26,12 @@ export const GifsApp = function () {
 
       {/* Búsquedas previas */}
       <PreviousSearches
+        onLabelClick={handleTermClicked}
         previousSearchesList={["Libros", "Risas", "Naturaleza", "Química"]}
       />
 
       {/* Gifs */}
-      <div className="gifs-container">
-        {sampleGifs.map((gif) => (
-          <div key={gif.id} className="gif-card">
-            <img src={gif.url} alt={gif.title} />
-            <h3>{gif.title}</h3>
-
-            <p>
-              {gif.width}x{gif.height} (?MB)
-            </p>
-          </div>
-        ))}
-      </div>
+      <GifList gifs={sampleGifs} />
     </>
   );
 };
