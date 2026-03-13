@@ -11,6 +11,7 @@ import { getGifsByQueryAction } from "./gifs/actions/get-gifs-by-query.action";
 
 export const GifsApp = function () {
   const [previousSearches, setPreviousSearches] = useState<string[]>([]);
+  const [foundGifs, setFoundGifs] = useState(sampleGifs);
 
   const addQueryToPreviousSearches = (processedQuery: string) => {
     // Create new searched terms list.
@@ -52,7 +53,7 @@ export const GifsApp = function () {
     // Make request
     const gifs = await getGifsByQueryAction(processedQuery);
 
-    console.debug(gifs);
+    setFoundGifs(gifs);
   };
 
   return (
@@ -78,7 +79,7 @@ export const GifsApp = function () {
       />
 
       {/* Gifs */}
-      <GifList gifs={sampleGifs} />
+      <GifList gifs={foundGifs} />
     </>
   );
 };
