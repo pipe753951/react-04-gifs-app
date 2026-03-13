@@ -12,6 +12,9 @@ export const GifsApp = function () {
   const handleTermClicked = (term: string) => {
     console.log({ term });
   };
+  const handleSearch = (query: string) => {
+    console.log({ query });
+  };
 
   return (
     <>
@@ -22,7 +25,12 @@ export const GifsApp = function () {
       />
 
       {/* Search */}
-      <SearchBar name="gifSearch" id="search" placeholder="Buscar gifs..." />
+      <SearchBar
+        onProcessQuery={handleSearch}
+        name="gifSearch"
+        id="search"
+        placeholder="Buscar gifs..."
+      />
 
       {/* Búsquedas previas */}
       <PreviousSearches
