@@ -1,19 +1,10 @@
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import "./index.css";
+import { useCounter } from "../hooks/useCounter";
 
 export const CounterApp = function () {
-  const [counter, setCounter] = useState(5);
-
-  const handleAdd = () => {
-    setCounter(counter + 1);
-  };
-  const handleSubtract = () => {
-    setCounter(counter - 1);
-  };
-  const handleReset = () => {
-    setCounter(5);
-  };
+  const { counter, handleAdd, handleSubtract, handleReset } = useCounter(5);
 
   return (
     <div className="flex flex-col items-center m-10">
