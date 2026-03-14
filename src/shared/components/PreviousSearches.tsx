@@ -12,12 +12,12 @@ export const PreviousSearches: FC<Props> = function ({
   onLabelClick,
 }) {
   return (
-    <div className="previous-searches-container">
-      <ul className="previous-searches-list">
+    <div className="flex items-center justify-center my-4">
+      <ul className="flex items-center justify-center flex-row flex-wrap gap-2 max-w-100 list-none">
         {previousSearchesList.map((previousSearch) => (
           <li
             key={previousSearch.toLowerCase()}
-            className="previous-searches-list-item"
+            className="border-2 border-gray-400 px-2.5 py-0.5 text-sm bg-white rounded-full cursor-pointer  transition-colors transition-200 ease-in-out hover:bg-gray-200"
             onClick={() => onLabelClick?.(previousSearch)}
           >
             {previousSearch}

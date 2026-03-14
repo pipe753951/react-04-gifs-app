@@ -5,9 +5,9 @@ interface Props {
 
 export const AppHeader = function ({ title, description }: Props) {
   return (
-    <div className="content-center">
-      <h1 className="h1">{title}</h1>
-      {description && <p>{description}</p>}
+    <div className="flex items-center flex-col">
+      <h1 className="mt-7 text-5xl font-bold">{title}</h1>
+      {description && <p className="my-2">{description}</p>}
     </div>
   );
 };
