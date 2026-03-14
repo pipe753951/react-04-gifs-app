@@ -1,0 +1,168 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GifsApp > Should render component properly 1`] = `
+<div>
+  <div
+    class="flex items-center flex-col"
+  >
+    <h1
+      class="mt-7 text-5xl font-bold"
+    >
+      Buscador de Gifs
+    </h1>
+    <p
+      class="my-2"
+    >
+      Encuentra un gif adecuado
+    </p>
+  </div>
+  <div
+    class="flex items-center justify-center flex-row gap-4 my-4"
+  >
+    <input
+      class=" border-2 border-gray-400 p-2.5 w-full max-w-72 text-gray-800 rounded-xl"
+      id="search"
+      name="gifSearch"
+      placeholder="Buscar gifs..."
+      type="text"
+      value=""
+    />
+    <button
+      class="border-none p-2.5 text-white bg-blue-500 rounded-xl cursor-pointer transition-colors duration-200 ease-in-out hover:bg-blue-700"
+    >
+      Buscar
+    </button>
+  </div>
+  <div
+    class="flex items-center justify-center my-4"
+  >
+    <ul
+      class="flex items-center justify-center flex-row flex-wrap gap-2 max-w-100 list-none"
+    />
+  </div>
+  <div
+    class="grid gap-6 grid-cols-2 mx-auto w-full max-w-7xl md:gap-5 md:grid-cols-3 lg:gap-7 lg:grid-cols-4 xl:gap-10 xl:grid-cols-5"
+  >
+    <div
+      class="flex items-center justify-center flex-col"
+    >
+      <img
+        alt="Mr. Bean Waiting"
+        class="w-full h-full rounded-xl object-cover"
+        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWZ2dnZ1eXQyb2dsMjY1ZDF5a24yZW05N2NmaGYxZXh4eWJqODVtbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QBd2kLB5qDmysEXre9/giphy.gif"
+      />
+      <h3
+        class="text-2xl text-center font-bold m-3"
+      >
+        Mr. Bean Waiting
+      </h3>
+      <p>
+        480
+        x
+        288
+         (?MB)
+      </p>
+    </div>
+    <div
+      class="flex items-center justify-center flex-col"
+    >
+      <img
+        alt="Funny Cat"
+        class="w-full h-full rounded-xl object-cover"
+        src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjBjY3kzaWltNXJ1ejR5NXlrenBkOTcxcXhncnJxb3RmNzBhZmNtdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Df0JB6yixeNqg/giphy.gif"
+      />
+      <h3
+        class="text-2xl text-center font-bold m-3"
+      >
+        Funny Cat
+      </h3>
+      <p>
+        480
+        x
+        427
+         (?MB)
+      </p>
+    </div>
+    <div
+      class="flex items-center justify-center flex-col"
+    >
+      <img
+        alt="No"
+        class="w-full h-full rounded-xl object-cover"
+        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzQzaHJjMzVjanltb3h1djRqcXNtOXEzaWt5eTVod2o2Z2dzenRvMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JYZ397GsFrFtu/giphy.gif"
+      />
+      <h3
+        class="text-2xl text-center font-bold m-3"
+      >
+        No
+      </h3>
+      <p>
+        480
+        x
+        394
+         (?MB)
+      </p>
+    </div>
+    <div
+      class="flex items-center justify-center flex-col"
+    >
+      <img
+        alt="Ok"
+        class="w-full h-full rounded-xl object-cover"
+        src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNm1kODh3bng2N21rZDllM240M2lieTh6ZGN5cnpvdTQ5Z3ZzZDNmZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tsgNNs93oIbwk/giphy.gif"
+      />
+      <h3
+        class="text-2xl text-center font-bold m-3"
+      >
+        Ok
+      </h3>
+      <p>
+        480
+        x
+        360
+         (?MB)
+      </p>
+    </div>
+    <div
+      class="flex items-center justify-center flex-col"
+    >
+      <img
+        alt="Elmo is the best"
+        class="w-full h-full rounded-xl object-cover"
+        src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG5zMmVsNDFzam56bmR6azl0bmFvbHQxdDczeDNzZTdxczhtejNrNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fUQ4rhUZJYiQsas6WD/giphy.gif"
+      />
+      <h3
+        class="text-2xl text-center font-bold m-3"
+      >
+        Elmo is the best
+      </h3>
+      <p>
+        300
+        x
+        400
+         (?MB)
+      </p>
+    </div>
+    <div
+      class="flex items-center justify-center flex-col"
+    >
+      <img
+        alt="Messi is the best"
+        class="w-full h-full rounded-xl object-cover"
+        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNThyZXBwbHFtdHNpYnh4ZnN0aGswcWJydXNwdnpjaXV0eXNlYXp1YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8BSJinJ8of9L0unCqW/giphy.gif"
+      />
+      <h3
+        class="text-2xl text-center font-bold m-3"
+      >
+        Messi is the best
+      </h3>
+      <p>
+        350
+        x
+        280
+         (?MB)
+      </p>
+    </div>
+  </div>
+</div>
+`;
