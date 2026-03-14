@@ -1,23 +1,27 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { sampleGifs } from "../../sample-data/gifs.sample";
 import type { Gif } from "../interfaces/gifs.interface";
 
 import { getGifsByQuery } from "../actions/get-gifs-by-query.action";
 
-const gifsCache: Record<string, Gif[]> = {};
+// const gifsCache: Record<string, Gif[]> = {};
 
 export const useGifs = () => {
   const [previousSearches, setPreviousSearches] = useState<string[]>([]);
   const [foundGifs, setFoundGifs] = useState(sampleGifs);
+  const wasClickedPreviousSearchTerm = useRef(false);
+  const gifsCache = useRef<Record<string, Gif[]>>({});
 
   const handleTermClicked = async (term: string) => {
     console.debug(gifsCache);
 
     addQueryToPreviousSearches(term);
 
-    if (gifsCache[term]) {
-      setFoundGifs(gifsCache[term]);
+    wasClickedPreviousSearchTerm.current = true;
+
+    if (gifsCache.current[term]) {
+      setFoundGifs(gifsCache.current[term]);
       return;
     }
 
@@ -43,6 +47,11 @@ export const useGifs = () => {
   };
 
   const handleSearch = async (query: string) => {
+    if (wasClickedPreviousSearchTerm.current) {
+      wasClickedPreviousSearchTerm.current = false;
+      return;
+    }
+
     // On a new variable, delete unnecesary spaces at from both ends of the received query.
     let processedQuery = query.trim();
 
@@ -60,15 +69,16 @@ export const useGifs = () => {
 
     console.debug(gifsCache);
 
-    if (gifsCache[processedQuery]) {
-      setFoundGifs(gifsCache[processedQuery]);
+    if (gifsCache.current[processedQuery]) {
+      setFoundGifs(gifsCache.current[processedQuery]);
       return;
     }
 
     // Make request
     const gifs = await getGifsByQuery(processedQuery);
-    gifsCache[processedQuery] = gifs;
+    gifsCache.current[processedQuery] = gifs;
 
+    wasClickedPreviousSearchTerm.current = false;
     setFoundGifs(gifs);
   };
 
