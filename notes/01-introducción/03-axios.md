@@ -1,15 +1,15 @@
-# 03. Axios
+# 03. axios
 
-## Ventajas de Axios
+## Ventajas de axios
 
 1. _Mucha gente lo utiliza._
 2. Es más robusto que el Fetch API.
 3. Permite hacer interceptores.
 4. Se integra muy bien con TypeScript.
 
-## Usar Axios
+## Usar axios
 
-Para utilizar Axios, se utiliza el objeto `axios` junto con los tipos de peticiones HTTP cómo métodos (`get`, `post`, etc.). Estos métodos reciben el URL donde se hará la petición, junto con las opciones de petición. Por ejemplo:
+Para utilizar axios, se utiliza el objeto `axios` junto con los tipos de peticiones HTTP cómo métodos (`get`, `post`, etc.). Estos métodos reciben el URL donde se hará la petición, junto con las opciones de petición. Por ejemplo:
 
 ```tsx
 import axios from "axios";
@@ -31,9 +31,9 @@ export const getGifsByQueryAction = async (query: string): Promise<Gif[]> => {
 };
 ```
 
-## Simplificar el uso de Axios
+## Simplificar el uso de axios
 
-Para simplificar una petición, se crea una instancia personalizada de Axios, usando `axios.create`, donde se indica la configuración que tiene, entre otras cosas, la URL base y los parámetros preestablecidos. Por ejemplo:
+Para simplificar una petición, se crea una instancia personalizada de axios, usando `axios.create`, donde se indica la configuración que tiene, entre otras cosas, la URL base y los parámetros preestablecidos. Por ejemplo:
 
 ```tsx
 import axios from "axios";
@@ -48,7 +48,7 @@ export const giphyApi = axios.create({
 });
 ```
 
-Ahora, se utiliza la instancia como si fuera el propio Axios, usarla conlleva a que aquellos parámetros se usarán como preestablecidos, y las peticiones que se hagan se harán sobre la URL base. Por ejemplo:
+Ahora, se utiliza la instancia como si fuera el propio axios, usarla conlleva a que aquellos parámetros se usarán como preestablecidos, y las peticiones que se hagan se harán sobre la URL base. Por ejemplo:
 
 ```tsx
 const response = await giphyApi<GiphyResponse>("/search", {
