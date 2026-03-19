@@ -27,10 +27,7 @@ describe("useCounter", () => {
     expect(result.current.counter).toBe(initialValue);
   });
 
-  // increment handleAdd
-  // decrement handleSubtract
-  // reset handleReset
-  test("Should increment when handleAdd is called.", () => {
+  test("Should increase when handleAdd is called.", () => {
     const { result } = renderHook(() => useCounter());
 
     act(() => {
@@ -39,6 +36,7 @@ describe("useCounter", () => {
 
     expect(result.current.counter).toBe(defaultInitialValue + 1);
   });
+
   test("Should reduce when handleSubtract is called.", () => {
     const { result } = renderHook(() => useCounter());
 
@@ -46,6 +44,7 @@ describe("useCounter", () => {
 
     expect(result.current.counter).toBe(defaultInitialValue - 1);
   });
+
   describe("Should reset to default value when handleReset is called...", () => {
     test("when handleAdd was called two times.", () => {
       const { result } = renderHook(() => useCounter());
@@ -66,6 +65,7 @@ describe("useCounter", () => {
       expect(result.current.counter).toBe(defaultInitialValue);
     });
   });
+
   describe("Should reset to custom value (40) when handleReset is called.", () => {
     const initialValue = 40;
 
