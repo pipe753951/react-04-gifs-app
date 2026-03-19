@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, test, vi } from "vitest";
+import { afterEach, describe, expect, test, vi } from "vitest";
 import { CounterApp } from "./CounterApp";
 
 const handleAddMock = vi.fn();
@@ -16,6 +16,8 @@ vi.mock("../hooks/useCounter", () => ({
 }));
 
 describe("CounterApp (2)", () => {
+  afterEach(vi.clearAllMocks);
+
   test("Should render the component", () => {
     render(<CounterApp />);
 
@@ -32,7 +34,7 @@ describe("CounterApp (2)", () => {
     expect(resetButton.innerHTML).toBeDefined();
   });
 
-  test("Should call handleAdd when button is clicked", () => {
+  test("Should call handleAdd when '+1' button is clicked", () => {
     render(<CounterApp />);
 
     const increaseButton = screen.getByRole("button", { name: "+1" });
@@ -43,5 +45,31 @@ describe("CounterApp (2)", () => {
     expect(handleAddMock).toHaveBeenCalledTimes(1);
     expect(handleSubtractMock).not.toHaveBeenCalled();
     expect(handleResetMock).not.toHaveBeenCalled();
+  });
+
+  test("Should call handleSubtract when '-1' button is clicked", () => {
+    render(<CounterApp />);
+
+    const reduceButton = screen.getByRole("button", { name: "-1" });
+
+    fireEvent.click(reduceButton);
+
+    expect(handleSubtractMock).toHaveBeenCalled();
+    expect(handleSubtractMock).toHaveBeenCalledTimes(1);
+    expect(handleAddMock).not.toHaveBeenCalled();
+    expect(handleResetMock).not.toHaveBeenCalled();
+  });
+
+  test("Should call handleReset when 'Reset' button is clicked", () => {
+    render(<CounterApp />);
+
+    const reduceButton = screen.getByRole("button", { name: "Reset" });
+
+    fireEvent.click(reduceButton);
+
+    expect(handleResetMock).toHaveBeenCalled();
+    expect(handleResetMock).toHaveBeenCalledTimes(1);
+    expect(handleAddMock).not.toHaveBeenCalled();
+    expect(handleSubtractMock).not.toHaveBeenCalled();
   });
 });
