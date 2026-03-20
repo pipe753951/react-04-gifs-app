@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, test } from "vitest";
+import { beforeEach, describe, expect, test, vi } from "vitest";
 import AxiosMockAdapter from "axios-mock-adapter";
 
 import { giphySearchResponseMock } from "../../../tests/mocks/giphy.response.data";
@@ -61,10 +61,13 @@ describe("getGifsByQuery", () => {
     const gifs = await getGifsByQuery("");
 
     expect(gifs.length).toBe(0);
-    console.log(axiosMock.history);
   });
 
   test("should handle an error when the API returns it.", async () => {
+    const consoleErrorSpy = vi
+      .spyOn(console, "error")
+      .mockImplementation(() => {});
+
     axiosMock.onGet("/search").reply(400, {
       data: [],
       meta: {
@@ -76,8 +79,7 @@ describe("getGifsByQuery", () => {
 
     const gifs = await getGifsByQuery("labs");
 
-    console.log(gifs);
-
-    // expect(gifs.length).toBe(0);
+    expect(gifs.length).toBe(0);
+    expect(consoleErrorSpy).toHaveBeenCalledTimes(1);
   });
 });
