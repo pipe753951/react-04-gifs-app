@@ -9,9 +9,7 @@ const { result } = renderHook(() => useCounter());
 const { result } = renderHook(useCounter);
 ```
 
-# Cambiar estado de los hooks
-
----
+## Cambiar estado de los hooks
 
 La función `renderHook` devuelve un objeto que, entre otras cosas, tiene el “resultado” (`result`) y dentro de él está el resultado actual (`current`), ahí está lo que devuelve el hook y, por tanto, se puede llamar a los métodos del hook que sirven para actualizar el estado.
 
@@ -38,7 +36,7 @@ act(() => {
 });
 ```
 
-## El problema de actualización de estado
+### El problema de actualización de estado
 
 Es posible actualizar el mismo estado con métodos repetidos, sin embargo, hay que tener en cuenta cómo se actualiza el estado en el custom hook:
 
