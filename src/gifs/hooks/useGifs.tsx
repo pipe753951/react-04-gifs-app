@@ -85,10 +85,10 @@ export const useGifs = () => {
   return {
     // Properties
     foundGifs,
+    previousSearches,
 
     // Methods
     handleSearch,
     handleTermClicked,
-    previousSearches,
   };
 };
