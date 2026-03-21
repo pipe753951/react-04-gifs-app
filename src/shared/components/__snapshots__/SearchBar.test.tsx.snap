@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SearchBar > should render SearchBar properly. 1`] = `
+exports[`SearchBar > must render SearchBar properly. 1`] = `
 <form
   action="?"
   aria-label="Search GIFs"

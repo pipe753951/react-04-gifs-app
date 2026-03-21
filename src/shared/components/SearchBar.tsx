@@ -10,6 +10,7 @@ interface Props {
 }
 
 export const SearchBar = function (props: Props) {
+  // TODO: Prevent two callback calls from being made when the search button is pressed.
   const {
     onProcessQuery,
     name = "search",
