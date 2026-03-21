@@ -14,8 +14,7 @@ export const useGifs = () => {
   const gifsCache = useRef<Record<string, Gif[]>>({});
 
   const handleTermClicked = async (term: string) => {
-    console.debug(gifsCache);
-
+    // TODO: Reject any value that is not in history.
     addQueryToPreviousSearches(term);
 
     wasClickedPreviousSearchTerm.current = true;
@@ -26,24 +25,27 @@ export const useGifs = () => {
     }
 
     const gifs = await getGifsByQuery(term);
+    gifsCache.current[term] = gifs;
     setFoundGifs(gifs);
   };
 
   const addQueryToPreviousSearches = (processedQuery: string) => {
-    // Create new searched terms list.
-    // Check if query has been previously is registered;
-    // if so, then remove registered query to "move it" to the first place.
-    const processedPreviousSearches = previousSearches.filter(
-      (term) => term !== processedQuery,
-    );
-
-    // If there are more than 7 terms, remove the last one (New query will be added on update state).
-    if (processedPreviousSearches.length > 7) {
-      processedPreviousSearches.pop();
-    }
-
     // Now, set newPreviousSearches on previousSearches state.
-    setPreviousSearches([processedQuery, ...processedPreviousSearches]);
+    setPreviousSearches((prevPreviousSearches) => {
+      // Create new searched terms list.
+      // Check if query has been previously is registered;
+      // if so, then remove registered query to "move it" to the first place.
+      const processedPreviousSearches = prevPreviousSearches.filter(
+        (term) => term !== processedQuery,
+      );
+
+      // If there are more than 7 terms, remove the last one (New query will be added on update state).
+      if (processedPreviousSearches.length > 7) {
+        processedPreviousSearches.pop();
+      }
+
+      return [processedQuery, ...processedPreviousSearches];
+    });
   };
 
   const handleSearch = async (query: string) => {
@@ -66,8 +68,6 @@ export const useGifs = () => {
 
     // Add query to previous searches array, also, update state.
     addQueryToPreviousSearches(processedQuery);
-
-    console.debug(gifsCache);
 
     if (gifsCache.current[processedQuery]) {
       setFoundGifs(gifsCache.current[processedQuery]);
