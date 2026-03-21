@@ -8,7 +8,7 @@ Para hacer que el paquete tome control de una instancia de `axios` (O incluso, d
 
 Para falsifica una petición HTTP con el paquete, desde la instancia se llama los métodos que comienzan con `on`, que falsifican cualquier tipo de petición HTTP soportada. Existe el método `onGet`, que falsifica las peticiones GET; sus parámetros (Y posiblemente el de las otras funciones) se conforman de la URL o la ruta que se desea falsificar, y un objeto de configuración. También, este método devuelve métodos cómo `reply`, que indica cómo será la respuesta HTTP, se compone del código HTTP de respuesta, y los datos de la respuesta. Por ejemplo:
 
-```tsx
+```ts
 // ...
 const axiosMock = new AxiosMockAdapter(giphyApi);
 

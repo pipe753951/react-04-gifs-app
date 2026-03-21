@@ -4,7 +4,7 @@ Para realizar pruebas sobre hooks, hay que hacer uso de la función de Testing L
 
 Como parámetro, esta función solicita el hook, que a veces se deberá usar un callback para llamarlo. Por ejemplo:
 
-```tsx
+```ts
 const { result } = renderHook(() => useCounter());
 const { result } = renderHook(useCounter);
 ```
@@ -30,7 +30,7 @@ This ensures that you're testing the behavior the user would see in the browser.
 
 En pocas palabras, en mensaje dice lo siguiente: \*\*Cualquier actualización de estado debe estar envuelto dentro de un callback en `act`. Por tanto, para actualizar el estado, más o menos debe ser de la siguiente manera:
 
-```tsx
+```ts
 act(() => {
   result.current.handleAdd();
 });

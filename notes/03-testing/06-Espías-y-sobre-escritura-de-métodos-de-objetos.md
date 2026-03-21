@@ -4,6 +4,6 @@ Los espías son una característica de Vitest que permite rastrear el comportami
 
 Además, junto con este método se puede configurar un mock para que, encima de que se cree un espía, se reemplace la función para ciertos propósitos, una manera sencilla es utilizar el método `mockImplementation`; que recibe como parámetro la función falsificada. Por ejemplo:
 
-```tsx
+```ts
 const consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 ```
