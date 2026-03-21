@@ -21,7 +21,6 @@ export const GifsApp = function () {
       <SearchBar
         onProcessQuery={handleSearch}
         name="gifSearch"
-        id="search"
         placeholder="Buscar gifs..."
       />
 

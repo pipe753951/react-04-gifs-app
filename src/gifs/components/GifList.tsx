@@ -14,7 +14,7 @@ export const GifList = function ({ gifs }: Props) {
             alt={gif.title}
             className="w-full h-full rounded-xl object-cover"
           />
-          <h3 className="text-2xl text-center font-bold m-3">{gif.title}</h3>
+          <h2 className="text-2xl text-center font-bold m-3">{gif.title}</h2>
 
           <p>
             {gif.width}x{gif.height} (?MB)

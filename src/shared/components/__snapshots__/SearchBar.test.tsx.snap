@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SearchBar > should render SearchBar properly. 1`] = `
+<form
+  action="?"
+  aria-label="Search GIFs"
+  class="flex items-center justify-center flex-row gap-4 my-4"
+>
+  <input
+    class=" border-2 border-gray-400 p-2.5 w-full max-w-72 text-gray-800 rounded-xl"
+    id="search"
+    name="search"
+    type="search"
+    value=""
+  />
+  <button
+    class="border-none p-2.5 text-white bg-blue-500 rounded-xl cursor-pointer transition-colors duration-200 ease-in-out hover:bg-blue-700"
+    type="button"
+  >
+    Buscar
+  </button>
+</form>
+`;

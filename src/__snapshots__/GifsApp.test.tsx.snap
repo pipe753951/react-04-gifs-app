@@ -16,7 +16,9 @@ exports[`GifsApp > Should render component properly 1`] = `
       Encuentra un gif adecuado
     </p>
   </div>
-  <div
+  <form
+    action="?"
+    aria-label="Search GIFs"
     class="flex items-center justify-center flex-row gap-4 my-4"
   >
     <input
@@ -24,15 +26,16 @@ exports[`GifsApp > Should render component properly 1`] = `
       id="search"
       name="gifSearch"
       placeholder="Buscar gifs..."
-      type="text"
+      type="search"
       value=""
     />
     <button
       class="border-none p-2.5 text-white bg-blue-500 rounded-xl cursor-pointer transition-colors duration-200 ease-in-out hover:bg-blue-700"
+      type="button"
     >
       Buscar
     </button>
-  </div>
+  </form>
   <div
     class="flex items-center justify-center my-4"
   >
@@ -51,11 +54,11 @@ exports[`GifsApp > Should render component properly 1`] = `
         class="w-full h-full rounded-xl object-cover"
         src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWZ2dnZ1eXQyb2dsMjY1ZDF5a24yZW05N2NmaGYxZXh4eWJqODVtbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QBd2kLB5qDmysEXre9/giphy.gif"
       />
-      <h3
+      <h2
         class="text-2xl text-center font-bold m-3"
       >
         Mr. Bean Waiting
-      </h3>
+      </h2>
       <p>
         480
         x
@@ -71,11 +74,11 @@ exports[`GifsApp > Should render component properly 1`] = `
         class="w-full h-full rounded-xl object-cover"
         src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjBjY3kzaWltNXJ1ejR5NXlrenBkOTcxcXhncnJxb3RmNzBhZmNtdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Df0JB6yixeNqg/giphy.gif"
       />
-      <h3
+      <h2
         class="text-2xl text-center font-bold m-3"
       >
         Funny Cat
-      </h3>
+      </h2>
       <p>
         480
         x
@@ -91,11 +94,11 @@ exports[`GifsApp > Should render component properly 1`] = `
         class="w-full h-full rounded-xl object-cover"
         src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzQzaHJjMzVjanltb3h1djRqcXNtOXEzaWt5eTVod2o2Z2dzenRvMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JYZ397GsFrFtu/giphy.gif"
       />
-      <h3
+      <h2
         class="text-2xl text-center font-bold m-3"
       >
         No
-      </h3>
+      </h2>
       <p>
         480
         x
@@ -111,11 +114,11 @@ exports[`GifsApp > Should render component properly 1`] = `
         class="w-full h-full rounded-xl object-cover"
         src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNm1kODh3bng2N21rZDllM240M2lieTh6ZGN5cnpvdTQ5Z3ZzZDNmZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tsgNNs93oIbwk/giphy.gif"
       />
-      <h3
+      <h2
         class="text-2xl text-center font-bold m-3"
       >
         Ok
-      </h3>
+      </h2>
       <p>
         480
         x
@@ -131,11 +134,11 @@ exports[`GifsApp > Should render component properly 1`] = `
         class="w-full h-full rounded-xl object-cover"
         src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG5zMmVsNDFzam56bmR6azl0bmFvbHQxdDczeDNzZTdxczhtejNrNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fUQ4rhUZJYiQsas6WD/giphy.gif"
       />
-      <h3
+      <h2
         class="text-2xl text-center font-bold m-3"
       >
         Elmo is the best
-      </h3>
+      </h2>
       <p>
         300
         x
@@ -151,11 +154,11 @@ exports[`GifsApp > Should render component properly 1`] = `
         class="w-full h-full rounded-xl object-cover"
         src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNThyZXBwbHFtdHNpYnh4ZnN0aGswcWJydXNwdnpjaXV0eXNlYXp1YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8BSJinJ8of9L0unCqW/giphy.gif"
       />
-      <h3
+      <h2
         class="text-2xl text-center font-bold m-3"
       >
         Messi is the best
-      </h3>
+      </h2>
       <p>
         350
         x
